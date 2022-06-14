@@ -32,7 +32,7 @@ public abstract class CachedBaseRepo<TVm> where TVm : IEntity
         await cache.SetStringAsync(id.ToString(), cachedJson, new DistributedCacheEntryOptions { SlidingExpiration = TimeSpan.FromHours(3) }, cancellationToken);
         return mappedCategory;
     }
-    
+
     protected async Task<IEnumerable<TVm>> Vms(IEnumerable<Guid> ids, CancellationToken cancellationToken)
     {
         var idList = ids.ToArray();

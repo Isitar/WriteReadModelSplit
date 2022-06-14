@@ -29,7 +29,7 @@ public class CachedItemReadRepo
 
     public async Task<IEnumerable<ItemListEntryVm>> ItemListEntryVms(IEnumerable<Guid> ids, CancellationToken cancellationToken) => await Vms(ids, cancellationToken);
     public async Task<IEnumerable<ItemVm>> ItemVms(IEnumerable<Guid> ids, CancellationToken cancellationToken) => await Vms(ids, cancellationToken);
-  
+
 
     public Task Handle(ItemUpdatedEvent notification, CancellationToken cancellationToken) => SetCache(notification.Item, cancellationToken);
 

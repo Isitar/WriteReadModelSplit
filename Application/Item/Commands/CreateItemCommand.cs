@@ -23,7 +23,7 @@ public class CreateItemCommandHandler : IRequestHandler<CreateItemCommand>
         this.domainContext = domainContext;
         this.publisher = publisher;
     }
-    
+
     public async Task<Unit> Handle(CreateItemCommand request, CancellationToken cancellationToken)
     {
         var category = await domainContext.Categories.FindAsync(new object[] { request.CategoryId }, cancellationToken);

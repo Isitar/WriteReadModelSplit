@@ -29,7 +29,7 @@ public class CachedCategoryReadRepo
         this.domainContext = domainContext;
         this.mapper = mapper;
     }
-    
+
     public async Task<IEnumerable<CategoryListEntryVm>> CategoryListEntryVms(IEnumerable<Guid> ids, CancellationToken cancellationToken) => await Vms(ids, cancellationToken);
 
     public async Task<IEnumerable<CategoryVm>> CategoryVms(IEnumerable<Guid> ids, CancellationToken cancellationToken) => await Vms(ids, cancellationToken);

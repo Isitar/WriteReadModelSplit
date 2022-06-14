@@ -23,7 +23,7 @@ public class CreateCategoryCommandHandler : IRequestHandler<CreateCategoryComman
         this.domainContext = domainContext;
         this.publisher = publisher;
     }
-    
+
     public async Task<Unit> Handle(CreateCategoryCommand request, CancellationToken cancellationToken)
     {
         var category = new Category(request.Id, request.Name, request.Description, request.Color);

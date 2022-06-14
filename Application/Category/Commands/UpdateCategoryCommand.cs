@@ -29,7 +29,7 @@ public class UpdateCategoryCommandHandler : IRequestHandler<UpdateCategoryComman
         category.UpdateBasicData(request.Name, request.Description, request.Color);
         await domainContext.SaveAsync(cancellationToken);
         await publisher.Publish(new CategoryUpdatedEvent(category), cancellationToken);
-        
+
         return Unit.Value;
     }
 }
